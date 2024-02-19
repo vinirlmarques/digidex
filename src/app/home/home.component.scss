@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
+
+.home-container {
+    font-family: "Micro 5", sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(37, 37, 37);
+    color: whitesmoke;
+    background: linear-gradient(-45deg, #0D47A1, #1976D2, #2196F3, #64B5F6);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+  
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo {
+    width: 50%;
+    height: auto;
+    position: relative;
+    bottom: 15%;
+}
+
+p {
+    position: relative;
+    bottom: 10%;
+    font-size: 250%;
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+button{
+    position: relative;
+    font-family: "Micro 5", sans-serif;
+    bottom: 5%;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: 170%;
+    background-color: #ff6600;
+    color: whitesmoke;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.digi1{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 20%;
+}
+
+.digi2{
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    width: 20%;
+}

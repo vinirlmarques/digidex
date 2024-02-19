@@ -1,0 +1,38 @@
+<div class="home-container">
+    <header>
+        <img src="../../assets/digidex.png" class="logo">
+    </header>
+    
+    <div class="search-container">
+        <input *ngIf="selectSearch == 'name'" type="text" class="search" placeholder="Digite o nome" [(ngModel)]="searchTerm" (keyup)="search(searchTerm)">
+        <select class="search3" *ngIf="selectSearch == 'level'" [(ngModel)]="searchTerm2" (change)="searchLevel(searchTerm2)">
+            <option value="In Training">In Training</option>
+            <option value="Training">Training</option>
+            <option value="Rookie">Rookie</option>
+            <option value="Champion">Champion</option>
+            <option value="Fresh">Fresh</option>
+            <option value="Ultimate">Ultimate</option>
+            <option value="Mega">Mega</option>
+            <option value="Armor">Armor</option>
+        </select>
+
+        <select class="search2" [(ngModel)]="selectSearch" (change)="resetSearch()">
+            <option value="name">Nome</option>
+            <option value="level">Nível</option>
+        </select>
+
+    </div>
+
+    <div class="digidex-container">
+        <div class="digidex-card" *ngFor="let digimon of paginatedDigimons">
+            <img [src]="digimon.img" class="digidex-img">
+            <h1>{{digimon.name}}</h1>
+            <h3>{{digimon.level}}</h3>
+        </div>
+    </div>
+
+    <div class="pagination-controls">
+        <button class="buttonPrevNext" (click)="goToPreviousPage()" *ngIf="currentPage > 0">Anterior</button>
+        <button class="buttonPrevNext" (click)="goToNextPage()" *ngIf="digimons.length > (currentPage + 1) * itemsPerPage">Próximo</button>
+    </div>
+</div>
