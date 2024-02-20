@@ -8,6 +8,7 @@ import { ApiConsumerService } from '../api-consumer.service';
 })
 export class DigidexComponent implements OnInit {
   digimons: any[] = [];
+  digimons2: any[] = [];
   searchTerm: string = '';
   searchTerm2: string = '';
   currentPage = 0;
@@ -33,6 +34,7 @@ export class DigidexComponent implements OnInit {
   loadDigimons() {
     this.apiConsumer.getAllDigimons().subscribe((data: any) => {
       this.digimons = data;
+      this.digimons2 = data;
     });
   }
 
@@ -41,11 +43,11 @@ export class DigidexComponent implements OnInit {
       this.loadDigimons();
     }
     if (name) {
-      this.apiConsumer.getDigimonByName(name).subscribe((data: any) => {
-        this.digimons = Array.isArray(data) ? data : [data];
-      });
+      this.digimons = this.digimons2.filter((digimon) =>
+        digimon.name.toLowerCase().includes(name.toLowerCase())
+      );
     } else {
-      this.loadDigimons();
+      this.digimons = [...this.digimons2];
     }
   }
 
