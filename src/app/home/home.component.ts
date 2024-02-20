@@ -16,4 +16,12 @@ export class HomeComponent {
 
     setTimeout(() => this.router.navigate(['/digidex']), 1000); // Espera 1s
   }
+
+  goToDigiguest() {
+    document
+      .querySelectorAll('.home-container > *, .digi1, .digi2')
+      .forEach((el) => el.classList.add('fade-out'));
+
+    setTimeout(() => this.router.navigate(['/digiguest']), 1000); // Espera 1s
+  }
 }

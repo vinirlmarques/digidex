@@ -1,0 +1,42 @@
+<div class="home-container">
+    <header>
+        <img src="../../assets/digidex.png" class="logo">
+    </header>
+    <div class="digidex-card" [ngClass]="{'hide': gameOver || gameWon}">
+      <img [src]="currentDigimon.img" class="digidex-img">
+      <h1 *ngIf="guessType === 'name'">???</h1>
+      <h1 *ngIf="guessType === 'level'">{{currentDigimon.name}}</h1>
+      <h3 *ngIf="guessType === 'level'">???</h3>
+      <h3 *ngIf="guessType === 'name'">{{currentDigimon.level}}</h3>
+    </div>
+    <br [ngClass]="{'hide': gameOver || gameWon}">
+  
+    <p [ngClass]="{'hide': gameOver || gameWon}">{{message}}</p>
+    <br [ngClass]="{'hide': gameOver || gameWon}">
+    <input type="text" class="search" [ngClass]="{'hide': gameOver || gameWon}" [(ngModel)]="guess" placeholder="Digite sua resposta">
+    <br [ngClass]="{'hide': gameOver || gameWon}">
+    <button class="buttonPrevNext" [ngClass]="{'hide': gameOver || gameWon}" (click)="submitGuess()">Enviar</button>
+    <br [ngClass]="{'hide': gameOver || gameWon}">
+    <p [ngClass]="{'end': gameOver || gameWon}">Respostas corretas: {{correctAnswerCount}} <br>Total de tentativas: {{totalGuesses}}</p>
+
+    <div *ngIf="gameOver" class="game-over-message">
+        <p>Você perdeu o jogo!</p><br><button class="buttonPrevNext" (click)="restartGame()">Reiniciar</button>
+      </div>
+      
+      <div *ngIf="gameWon" class="game-won-message">
+        <p>Parabéns! Você venceu o jogo!</p><br><button class="buttonPrevNext" (click)="restartGame()">Reiniciar</button>
+      </div>
+</div>
+
+<div class="rules" (click)="openRulesModal()">
+    <h1>Regras</h1>
+</div>
+
+<div *ngIf="rulesModal" class="modalRules">
+    <button class="closeButton" (click)="closeRulesModal()">X</button>
+    <p class="rulesP">O Digiguest é um jogo de adivinhação onde você deve acertar o
+        nome ou o nível do Digimon que aparecer na tela.<br><br>
+        <span style="color: green;">- Se você acertar 3, você ganha.</span><br><span style="color: rgb(128, 0, 0);">- Se errar 3, o jogo acaba e você perde.</span><br>
+        Boa sorte!</p>
+</div>
+  

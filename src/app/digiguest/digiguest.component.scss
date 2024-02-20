@@ -137,7 +137,7 @@ header{
     justify-content: center;
     align-items: center;
     border: 1px solid white;
-    margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 10px;
 }
 
@@ -145,3 +145,85 @@ header{
     height: 50%;
     border-radius: 50%;
 }
+
+p{
+    font-family: "Micro 5", sans-serif;
+    font-size: 180%;
+    color: whitesmoke;
+}
+
+.game-over-message, .game-won-message {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .game-over-message p, .game-won-message p {
+    color: #ff0000; /* Vermelho para derrota */
+  }
+  
+  .game-won-message p {
+    color: #00ff00; /* Verde para vitória */
+  }
+  
+  .hide {
+    display: none;
+  }
+
+  .end{
+    margin-top: 10%;
+  }
+
+
+    .rules{
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        color: whitesmoke;
+        border: 3px dashed red;
+        padding: 6px;
+        cursor: pointer;
+
+        @media screen and (max-width:768px) {
+            left: 8%;
+        }
+    }
+
+    .rules:hover{
+        color: rgb(0, 0, 0);
+    }
+
+    .modalRules{
+        background-color: whitesmoke;
+        color: black;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 999;
+        top: 20%;
+        left: 10%;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        @media screen and (max-width: 768px)
+        {
+            width: 250px;    
+        }
+    }
+
+    .rulesP{
+        color: black;
+    }
+
+    .closeButton{
+        font-family: 'Roboto', sans-serif;
+        color: whitesmoke;
+        position: absolute;
+        background-color: #ff0000;
+        border: none;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
