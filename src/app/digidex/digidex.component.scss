@@ -139,6 +139,10 @@ header{
     border: 1px solid white;
     margin-bottom: 20px;
     border-radius: 10px;
+
+    @media screen and (max-width: 768px){
+        width: 40%;
+    }
 }
 
 .digidex-img{
