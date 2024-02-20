@@ -28,7 +28,7 @@
       </div>
 </div>
 
-<div class="rules" (click)="openRulesModal()">
+<div class="rules" (click)="openRulesModal()" [ngClass]="{'hide': gameOver || gameWon}">
     <h1>Regras</h1>
 </div>
 
