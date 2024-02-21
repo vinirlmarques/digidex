@@ -39,6 +39,7 @@ export class DigidexComponent implements OnInit {
   }
 
   search(name: string) {
+    this.currentPage = 0;
     if (name == '') {
       this.loadDigimons();
     }
