@@ -58,6 +58,8 @@ export class DigidexComponent implements OnInit {
   }
 
   searchLevel(level: string) {
+
+    this.currentPage = 0;
     if (level) {
       this.apiConsumer.getDigimonByLevel(level).subscribe((data: any) => {
         this.digimons = Array.isArray(data) ? data : [data];
