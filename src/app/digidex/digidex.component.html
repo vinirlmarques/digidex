@@ -5,7 +5,8 @@
     
     <div class="search-container">
         <input *ngIf="selectSearch == 'name'" type="text" class="search" placeholder="Digite o nome" [(ngModel)]="searchTerm" (keyup)="search(searchTerm)">
-        <select class="search3" *ngIf="selectSearch == 'level'" [(ngModel)]="searchTerm2" (change)="searchLevel(searchTerm2)">
+        <select class="search" *ngIf="selectSearch == 'level'" [(ngModel)]="searchTerm2" (change)="searchLevel(searchTerm2)">
+            <option value="" disabled selected>Selecione um nível</option>
             <option value="In Training">In Training</option>
             <option value="Training">Training</option>
             <option value="Rookie">Rookie</option>
@@ -15,8 +16,9 @@
             <option value="Mega">Mega</option>
             <option value="Armor">Armor</option>
         </select>
+        
 
-        <select class="search2" [(ngModel)]="selectSearch" (change)="resetSearch()">
+        <select class="typeSearch" [(ngModel)]="selectSearch" (change)="resetSearch()">
             <option value="name">Nome</option>
             <option value="level">Nível</option>
         </select>

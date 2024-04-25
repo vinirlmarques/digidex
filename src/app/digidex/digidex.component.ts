@@ -23,7 +23,7 @@ export class DigidexComponent implements OnInit {
     } else if (window.innerWidth < 510) {
       this.itemsPerPage = 6;
     } else {
-      this.itemsPerPage = 8;
+      this.itemsPerPage = 12;
     }
 
     this.loadDigimons();
