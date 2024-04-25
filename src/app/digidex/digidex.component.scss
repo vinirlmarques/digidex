@@ -21,10 +21,6 @@ html, :host, :root {
     animation: gradient 5s ease infinite;
     margin: 0;
     padding: 0;
-
-    @media screen and (max-height: 768px){
-        height: 100%;
-    }
 }
 
 @keyframes gradient {
@@ -81,12 +77,7 @@ header{
         font-size: 150%;
         min-width: 80px;
     }
-
-    @media screen and (max-width: 480px){
-        font-size: 120%;
-        min-width: 60px;
-    }
-
+    
 }
 
 .search{
@@ -107,7 +98,7 @@ header{
 
 .digidex-container {
     width: 100%;
-    height: auto;
+    height: 70vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -135,7 +126,6 @@ header{
 .digidex-card{
     width: 20%;
     height: 30%;
-    max-height: 170px;
     min-width: 130px;
     display: flex;
     flex-direction: column;
